@@ -1,0 +1,128 @@
+Introducción del Curso
+......................
+
+💠Conceptos básicos de React
+💠Descargar e instalar Node.js
+💠JavaScript XML (JSX).
+💠Estructura básica de una aplicación de React.
+
+💠Proyecto 1: Clon de testimonios de freeCodeCamp.
+💠Proyecto 2: Contador de clics.
+💠Proyecto 3: Calculadora.
+💠Proyecto 4: Aplicación de tareas.
+
+💠Componentes de clase
+💠Adaptar los primeroes dos proyectos con componentes de clase:
+    💠Clon de testimonios de freeCodeCamp.
+    💠Contador de Clics.
+
+💠Conocimientos requeridos: 🟧HTML🟧, 🟦CSS🟦, 🟨JavaScript🟨. 
+
+¿Qué es React?
+--------------
+
+Es una biblioteca(librería) de JavaScript de código abierto(open source) diseñada para crear interfaces de usuario.
+
+¿Qué es una biblioteca(librería/library)?
+-----------------------------------------
+
+Es un conjunto de implementaciones o subprogramas que podemos usar en nuestro código.
+
+¿Cuál son las ventajas de React?
+--------------------------------
+
+💠Fácil de aprender y usar.
+💠Componentes reutilizables.
+💠Crear aplicaciones dinámicas.
+💠Buen desempeño.
+
+Conceptos Básicos de React
+--------------------------
+
+¿Qué es un Componente?
+----------------------
+
+Es una parte de la interfaz de usuario que es independiente y reutilizable.
+
+Nota🗒️: Existen dos componentes: Funcionales y De Clase.
+
+¿Qué es un Componente Funcional?
+--------------------------------
+
+Es una función de JavaScript/ES6 que retorna un elemento de React(JSX).
+
+Ej: 
+function Saludo(props) {
+  return <h1>¡Hola, {props.nombre}!</h2>;
+}
+
+Nota🗒️: props/propiedades
+
+Características de un Componente Funcional
+------------------------------------------
+
+💠Debe retornar un elemento JSX.
+💠Debe comenzar con una letra mayúscula.
+💠Puede recibir valores si es necesario.
+
+¿Qué son las Props?
+-------------------
+
+Son argumentos que puede recibir un componente de React.
+
+Nota🗒️: Los props solo pueden ser enviados de "padre a hijo".
+
+¿Qué es un Componente de Clase?
+-------------------------------
+
+Es una clase de ES6(JavaScript moderno) que retorna un elemento JSX.
+
+Ej:
+class Saludo extends React.Component {
+  render() {
+    return <h1>¡Hola, {this.props.nombre}!</h1>;
+  }
+}
+
+Características de un Componente de Clase
+-----------------------------------------
+
+💠Debe extender React.Component.
+💠Debe tener un método render() para retornar un elemento de JSX. 
+💠Puede recibir valores si es necesario.
+
+¿Qué es un Estado(State)?
+-------------------------
+
+Es una representación en JavaScript del conjunto de propiedades de un componente y sus valores actuales.
+
+Nota🗒️: En este concepto, "propiedades" NO se refiere a los props, sino a información que se representa sobre el componente.
+
+¿Por qué existen Componentes Funcionales y De Clase?
+----------------------------------------------------
+
+Anteriormente, usábamos componentes de clase para poder trabajar con "estados" de nuestros componentes. En versiones anteriores de React(anteriores a 16.8), no podíamos hacerlo en componentes funcionales.
+Luego... vinieron los Hooks.
+Ahora sí podemos asignar y actualizar el estado de un componente funcional en React con los hooks.
+
+¿Qué es un Hook?
+----------------
+
+Es una función especial que te permite trabajar con estados en componentes funcionales y otros aspectos de React. 
+
+Nota🗒️: Sin escribir un componente de clase. Esto nos permite escribir código mucho más conciso y fácil de entender.
+
+Event Listener
+--------------
+
+Es una función en JavaScript que es ejecutada cuando ocurre un evento específico. 
+
+Nota🗒️: También podemos referirnos a esta función como "Event Handler".
+
+Conceptos Importantes:
+----------------------
+💠Componente(Funcional y De Clase)
+💠Props
+💠Estado
+💠Hooks
+💠Event Listener

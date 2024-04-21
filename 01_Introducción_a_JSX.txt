@@ -1,0 +1,369 @@
+💠Introdución de JSX💠
+......................
+
+¿Qué es JSX(JavaScript XML)?
+----------------------------
+
+Es una extensión de React para la sintaxís de JavaScript.
+
+Nota1🗒️: Nos permite describir en JavaScript cómo se verán los componentes usando una estructura similar a HTML.
+Nota2🗒️: Su estructura(no necesariamente su estilo).
+
+¿Cuáles son las Ventajas de JSX?
+--------------------------------
+
+💠Estructura más fácil de visualizar.
+💠Errores y advertencias más útiles.
+
+Nota🗒️: JSX es opcional.
+
+Ejemplo de JSX:
+---------------
+const elemento = <h1>¡Hola, mundo!</h1>;
+🟨🟨🟨🟨🟨🟨  🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧
+JavaScript      HTML
+
+Ejemplo de un Componente en JSX:
+--------------------------------
+import React from "react";
+import "../hojas-de-estilo/Contador.css";
+
+function Contador({numClics}) {
+  return (
+    <div className="contador">🟧
+      {numClics}              🟧HTML JavaScript?
+    </div>                    🟧
+  );
+}
+
+export default Contador;
+
+Otro Ejemplo de un Componente de JSX:
+-------------------------------------
+import React from "react";
+import "../hojas de estilo/BotonClear.css";
+
+const BotonClear = (props) => (
+  <div className="boton-clear" onClick={props.manejarClear}>
+    {props.children}
+  </div>
+);
+
+export default BotonClear;
+
+Un Ejemplo más Estructurado y Elavorado(reutilizando los componentes):
+----------------------------------------------------------------------
+
+return (                                            🟧     🟨
+  <div className="App">                             🟧     🟨
+    <div>                                           🟧     🟨
+      <img                                          🟧     🟨
+      src={freeCodeCampLogo}                        🟧     🟨
+      className="freecodecamp-logo"                 🟧     🟨
+      alt="Logo de freeCodeCamp" />                 🟧     🟨
+    </div>                                          🟧     🟨
+    <div className="contenedor-calculadora">        🟧     🟨
+      <Pantalla input={input}/>                     🟧     🟨
+      <div className="fila>                         🟧     🟨
+        <Boton manejarClic={agregarInput}>1</Boton> 🟧     🟨
+        <Boton manejarClic={agregarInput}>2</Boton> 🟧HTML 🟨JavaScript?
+        <Boton manejarClic={agregarInput}>3</Boton> 🟧     🟨
+        <Boton manejarClic={agregarInput}>+</Boton> 🟧     🟨
+      </div>                                        🟧     🟨
+      <div className="fila>                         🟧     🟨
+        <Boton manejarClic={agregarInput}>4</Boton> 🟧     🟨
+        <Boton manejarClic={agregarInput}>5</Boton> 🟧     🟨
+        <Boton manejarClic={agregarInput}>6</Boton> 🟧     🟨
+        <Boton manejarClic={agregarInput}>-</Boton> 🟧     🟨
+      </div>                                        🟧     🟨
+    </div>                                          🟧     🟨
+  </div>                                            🟧     🟨
+)                                                   🟧     🟨
+
+Elementos en JSX
+----------------
+
+¿Qué es un Elemento?
+--------------------
+
+Son unidades más pequeñas en React. Definen lo que se ve en la pantalla.
+
+Diferencias entre Elementos y Componentes
+-----------------------------------------
+
+Los componentes en React están "hechos" de elementos.
+
+🟧HTML🟧
+---------
+
+<div id="root"></div>
+          |
+          V
+        Manejado por React DOM
+
+💠Con JSX, puedes crear y usar cualquier elemento HTML. Ej: <div>, <img>, <a>, <header>, <nav>, <p>, <h1>, <button>, <h2>.
+💠En JSX, los elementos HTML se representa con etiquetas en letras minúsculas.
+💠Los componentes definidos por el usuario comienzan con una letra mayúscula.
+
+Diferencias de Atributos entre HTML y CSS con JSX
+-------------------------------------------------
+
+🟧HTML🟧
+<h1 class="titulo-azul">titulo</h1>
+<label for="css">CSS</label>
+🔷JSX🔷
+<h1 className="titulo-azul">titulo</h1>
+<label htmlFor="css">CSS</label>
+
+🟦CSS🟦
+background-image
+background-color
+font-family
+🔷JSX🔷
+backgroundImage
+backgroundColor
+fontFamily
+
+💠 Puedes agregar atributos a tus elementos en JSX para especificar ciertas características, pero... algunos se escriben de forma distinta si los comparamos con HTML.
+💠 class es una palabra reservada en JavaScript que podemos usar para crear una clase. Por eso necesitamos escribir este atributo de forma distinta en JSX.
+💠 El atributo style acepta un objeto JavaScript con propiedades CSS escritas en camelCase.
+
+Ej:
+
+🟦CSS🟦
+const estiliDiv = {
+  color: "yellow",
+  backgroundColor: "black"
+}
+
+🔷JSX🔷
+<div style={estiloDiv}>¡Hola, Mundo!</div>
+
+Otra Alternativa
+----------------
+
+🔷JSX🔷
+          Objeto JavaScript
+            |
+            v
+<div style={{color: "yellow"}}>¡Hola, Mundo!</div>
+           ^
+           |
+          Insertar JavaScript
+
+¿Qué es React DOM?
+------------------
+
+Es un paquete que facilita la interacción y actualización del DOM en aplicaciones React.
+
+¿Qué es el DOM(Document Object Model)?
+--------------------------------------
+
+Es una representación en el navegador de todos los elementos que conforman una página o aplicaciones web.
+
+Atributos del DOM reconocidos por React
+---------------------------------------
+
+💠accept
+💠acceptCharset
+💠accessKey
+💠action
+💠allowFullScreen 
+💠alt 
+💠async
+💠autoComplete
+💠autoFocus
+💠autoPlay
+💠capture
+💠cellPadding
+💠cellSpacing
+💠challenge 
+💠charSet
+💠checked
+💠cite
+💠classID
+💠className
+💠colSpan
+💠cols
+💠content
+💠contentEditable
+💠contextMenu
+💠controls
+💠controlsList
+💠coords
+💠crossOrigin
+💠data
+💠dateTime
+💠default
+💠defer
+💠dir
+💠disabled
+💠download
+💠draggable
+💠encType
+💠form
+💠formAction
+💠formEncType 
+💠formMethod 
+💠formNoValidate
+💠formTarget 
+💠frameBorder 
+💠headers 
+💠height 
+💠hidden 
+💠high 
+💠href 
+💠hrefLang
+💠htmlFor
+💠httpEquiv 
+💠icon 
+💠id 
+💠inputMode 
+💠integrity 
+💠is 
+💠keyParams 
+💠keyType 
+💠kind 
+💠label 
+💠lang 
+💠list
+💠loop 
+💠low 
+💠manifest 
+💠marginHeight 
+💠marginWidth 
+💠max 
+💠maxLength 
+💠media 
+💠mediaGroup 
+💠method
+💠min 
+💠minLength 
+💠multiple 
+💠muted 
+💠name 
+💠noValidate 
+💠nonce 
+💠open 
+💠optimum 
+💠pattern
+💠placeholder 
+💠poster 
+💠preload 
+💠profile 
+💠radioGroup 
+💠readOnly 
+💠rel 
+💠required 
+💠reversed
+💠role 
+💠rowSpan 
+💠rows 
+💠sandbox 
+💠scope 
+💠scoped 
+💠scrolling 
+💠seamless 
+💠selected 
+💠shape 
+💠size
+💠sizes 
+💠span 
+💠spellCheck 
+💠src 
+💠srcDoc 
+💠srcLang 
+💠srcSet 
+💠start 
+💠step 
+💠style 
+💠summary
+💠tabIndex 
+💠target 
+💠title 
+💠type 
+💠useMap 
+💠value
+💠width 
+💠wmode 
+💠wrap
+
+Estructura con JSX
+------------------
+
+💠Al igual que en HTML, los elementos pueden ser anidados en JSX para formar estructuras más complejas. Ej:
+
+return (                                            
+  <div className="App">                             
+    <div>                                           
+      <img                                          
+      src={freeCodeCampLogo}                        
+      className="freecodecamp-logo"                 
+      alt="Logo de freeCodeCamp" />                 
+    </div>                                          
+    <div className="contenedor-calculadora">        
+      <Pantalla input={input}/>                     
+      <div className="fila>                         
+        <Boton manejarClic={agregarInput}>1</Boton> 
+        <Boton manejarClic={agregarInput}>2</Boton> 
+        <Boton manejarClic={agregarInput}>3</Boton> 
+        <Boton manejarClic={agregarInput}>+</Boton> 
+      </div>                                        
+      <div className="fila>                         
+        <Boton manejarClic={agregarInput}>4</Boton> 
+        <Boton manejarClic={agregarInput}>5</Boton> 
+        <Boton manejarClic={agregarInput}>6</Boton> 
+        <Boton manejarClic={agregarInput}>-</Boton>  
+      </div>                                        
+    </div>                                          
+  </div>                                           
+)                                                   
+
+Renderizar Componentes
+----------------------
+Ej: 
+🟧index.html🟧
+
+<div id="root"></div>
+
+🔷React DOM🔷
+
+const elemento = <h1>¡Hola, Mundo!</h1> //Elemento
+
+ReactDOM.render( //Renderizar
+  elemento, //Elemento a Renderizar
+  document.getElementById("root") //Contenedor para el Elemento 
+);
+
+Nota🗒️: import ReactDOM from "react-dom"; 
+                ^               ^
+                |               |
+            Variable para    Paquete
+            referirnos al
+            paquete 
+
+Self-Closing Tags("Etiquetas que se Cierran Solas")
+---------------------------------------------------
+
+¿Qué es una Self-Closing Tags?
+------------------------------
+
+Es un elemento que solo posee una etiquete de apertura ya que no contiene texto u otros elementos. Ej:
+<img src="logo.png" alt="Mi Imágen"/>
+
+Insertar JavaScript en JSX
+--------------------------
+Ej1: 
+
+let adjetivo = "Interesante";
+<p>React es {adjetivo}</p>
+            ^
+            |
+          Código de JavaScript
+
+Nota🗒️: Puedes escribir cualquier expresión válida de JavaScript entre las llaves y su valor será reemplazado.
+
+Ej2:
+
+let nombre = "Gino";
+<p>Su nombre es: {nombre.toUpperCase()}</p>
