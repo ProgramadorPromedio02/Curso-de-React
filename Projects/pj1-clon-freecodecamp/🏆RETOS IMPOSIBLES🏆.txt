@@ -1,0 +1,13 @@
+HECHO = 🏆
+
+1. Logra que en ciertas parte de los testiminios estén negrita:
+    Testamento 1: freeCodeCamp cambió mi vida.
+    Testamento 2: freeCodeCamp fue la puerta de entrada a mi carrera
+    Testamento 3: freeCodeCamp me dio las habilidades
+
+2. Personalidad el nombre del alt de la etiqueta <img />, utilizando props. 
+🏆
+
+3. Importar un componente que una todos los componentes de los testimonios en uno solo.
+
+4. Adaptar a la página en 7 pantallas distintas: 4k(2560p), Laptop L(1440px), Laptop(1024px), Tablet(768px), Mobile L(425px), Mobile M(375px), Mobile S(320px).

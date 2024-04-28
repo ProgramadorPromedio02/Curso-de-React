@@ -1,0 +1,10 @@
+HECHO = 🏆
+
+1. Crear un botón donde en lugar que sume el contador, reste en -1.
+
+2. Unir todos los componentes y en una solo en App.js.
+
+3. Crear un componente para el logo de freeCodeCamp.
+
+4. Adaptar a la página en 7 pantallas distintas: 4k(2560p), Laptop L(1440px), Laptop(1024px), Tablet(768px), Mobile L(425px), Mobile M(375px), Mobile S(320px).
+

@@ -16,13 +16,7 @@ function Testimonio(props) {
           <strong>{nombre}</strong> en {pais}
         </p>
         <p className='cargo-testimonio'>{cargo} en <strong>{empresa}</strong></p>
-        <p className='texto-testimonio'>
-          "{testimonio.map((parte, index) => (
-            <span key={index} style={{ fontWeight: parte.negrita ? 'bold' : 'normal' }}>
-              {parte.texto}
-            </span>
-          ))}"
-        </p>
+        <p className='texto-testimonio'>"{props.testimonio}"</p>
       </div>
     </div>
   );

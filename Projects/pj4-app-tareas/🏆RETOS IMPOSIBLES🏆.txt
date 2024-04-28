@@ -1,0 +1,9 @@
+1. Crear un componente para el logo de freeCodeCamp.
+
+2. Conseguir almacenar tareas que ingrese el usuario.
+
+3. Implementar a la página con otro enfoque diferente. Ej: En lugar de tener un componente llamado "ListaDeTareas" que tenga el formulario y la lista de tareas como tal, incluir esos componente(el formulario y lista de tareas) directamente en la aplicación principal y manejar el estado en esa aplicación principal sin el componente intermedio.
+
+3. Adaptar a la página en 7 pantallas distintas: 4k(2560p), Laptop L(1440px), Laptop(1024px), Tablet(768px), Mobile L(425px), Mobile M(375px), Mobile S(320px).
+
+4. Adaptar el proyecto con componentes de clase.
