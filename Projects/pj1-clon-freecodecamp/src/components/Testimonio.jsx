@@ -1,6 +1,4 @@
 // Testimonio.jsx
-
-import React from 'react';
 import '../stylesheets/Testimonio.css';
 
 function Testimonio(props) {

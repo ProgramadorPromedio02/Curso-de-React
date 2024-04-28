@@ -34,3 +34,14 @@ body
 {
   height: 50px;
 }
+
+.contenedor-principal 
+{
+  min-width: 600px;
+  height: 550px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

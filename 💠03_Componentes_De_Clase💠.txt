@@ -1,0 +1,229 @@
+💠Introducción a los componentes de clase💠
+............................................
+
+¿Qué es Componenete de Clase?
+-----------------------------
+
+Un componente de clase es una clase de ES6(JavaScript moderno) que retorna un elemento JSX.
+
+¿Cuál es la estructura de un componente de clase?
+-------------------------------------------------
+
+La estructura de un componente de clase, se dividen entre los métodos y los estados
+
+------------------------      ----------
+-                      -      -		.........
+-    Componente        -      -         .Métodos.
+-	               -      -		.........
+-    de                --------		
+-                      -      -         .........
+-    Clase             -      -	        .Estados.
+-                      -      -         .........
+------------------------      ----------
+
+En código:
+
+import React from 'react';
+
+class NombreComponente extends React.Component {
+
+};
+
+¿Qué es un Método?
+------------------
+
+Es una función asociada a un componente que puede acceder y usar su estado.
+
+Características de un componente de clase
+-----------------------------------------
+
+💠Deben extender React.Component
+💠Deben tener un método render() para retornar un elemento de JSX.
+💠Pueden recibir props si es necesario.
+
+¿Qué es el método render()?
+---------------------------
+
+Es un método que retorna la estructura del componente en JSX.
+
+Nota🗒️: Es el único método obligatorio para un componente de clase en React.
+
+Ejemplo en código:
+
+import React from 'react';
+
+class NombreComponente extends React.Component {
+  render () {
+    return <p>Mi Componente</p>;
+  }
+};
+
+
+¿Por qué Componentes de Clase?
+------------------------------
+
+Anteriormente, usábamos componentes de clase para poder trabajar con "estados" de nuestros componentes. En versiones anteriores de React(anterior a 16.8), no podíamos hacerlo en componentes funcionales. Luego... ¡Aparecieron los hooks!
+
+Claves del Articulo Oficial de React(https://es.legacy.reactjs.org/docs/hooks-intro.html#gradual-adoption-strategy)
+-------------------------------------------------------------------------------------------------------------------
+
+💠"No hay planes para eliminar las clases de React"
+💠"No hay prisa por migrar a los Hooks".
+💠"Pretendemos que los Hooks cubra todos los casos de uso existentes para las clases, pero seguiremos soportando los componentes de clase en un futuro previsible".
+
+Cómo trabajan los componentes de clase con los props
+----------------------------------------------------
+
+Los componentes de clase también pueden recibir props. Para acceder a un prop:
+
+this.props.nombreDelProp
+^	^	^
+|	|	|
+Palabra	Objeto	Nombre de la 
+Clave		propiedad
+
+Ej:
+
+class Saludo extends React.Component {
+  render () {
+    return <h1>¡Hola, {this.props.nombre}!</h1>;
+  }
+};
+
+this en Componentes de Clase
+----------------------------
+
+this se refiere al componente actual.
+
+constructor en Componetes de Clase
+----------------------------------
+
+¿Qué es un Constructor?
+-----------------------
+
+Es un método usado para inicializar el estado de un componente de React.
+
+Nota1🗒️: Es llamado automáticamente cuando se crea el componente.
+
+Ej:
+
+class Tarea extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {completada: true};
+  }
+
+  render () {
+    return <p>Mi Tarea</p>;
+  }
+};
+
+
+Nota2🗒️: El constructor debe llamar a super() para heredar todas las funciones de su componente "padre" (React.Component). //parent component//
+
+props en el Constructor
+-----------------------
+
+Si el componente tiene un método constructor y recibe props, deben ser pasados al constructor y a super().
+
+Ej:
+
+class Tarea extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render () {
+    return <p>Mi Tarea</p>;
+  }
+};
+
+Estado en el Constructor
+------------------------
+
+El objeto "state"(estado) se inicializa en el constructor.
+
+Ej:
+
+class Tarea extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {completada: true};
+  }
+
+  render () {
+    return <p>Mi Tarea</p>;
+  }
+};
+
+Nota🗒️: Puede tener varias propiedades separadas por comas.
+
+Ej:
+
+class Tarea extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      completada: true,
+      color: azul,
+      prioridad: 1
+    };
+  }
+
+  render () {
+    return <p>Mi Tarea</p>;
+  }
+};
+
+Accediendo al Estado
+--------------------
+
+Se acceda al estado poniendo la siguiente sintaxis: 
+this.state.propiedad
+.......... .........
+    ^		^
+    |		|
+Permite     Nombre de la 
+acceder a   propiedad
+ese objeto 
+del estado
+
+class Tarea extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      completada: true, //---> this.state.completada
+      color: azul, //---> this.state.color
+      prioridad: 1 //---> this.state.prioridad
+    };	|
+  }	|------------------------------------|
+					     |
+  render () {				     V
+    return <p>Mi Tarea tiene prioridad: {this.state.prioridad}</p>;
+  }
+};
+ 
+Actualizando el Estado
+----------------------
+
+Para actualizar una o más propiedades del objeto "state", se llama a this.setState() y se pasa como argumento un objeto con los propiedades que se van a actualizar y sus nuevos valores.
+
+Ej:
+
+this.setState({
+  completada: false,
+  color: "verde"
+});
+
+Métodos de Ciclo de Vida
+-----------------------
+
+¿Qué son los Métodos de Ciclo de Vida?
+--------------------------------------
+
+Son métodos especiales de React usados para realizar operaciones con componentes en momentos específicos de su vida en el DOM.
